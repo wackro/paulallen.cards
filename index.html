@@ -1,0 +1,43 @@
+<html>
+	<head>
+		<title>paulallen.cards</title>
+		<link href="css/style.css" rel="stylesheet" />
+		<script src="js/jquery-2.1.3.min.js"></script>
+		<script>
+			$(document).ready(function() {
+				$("#name").focus()
+				$("#print").click(function() {
+					window.print();
+				})
+			})
+		</script>
+	</head>
+	<body>
+		<form method="GET" action="">
+			<div id="container">
+				<div id="card">
+					<div id="card-top-left">
+						<input id="phone" type="text"" placeholder="212.555.6342" />
+					</div>
+					<div id="card-top-right">
+						<input id="company" type="text" class="right-align" placeholder="PIERCE & PIERCE" />
+						<input id="company-sub" type="text" class="right-align small right" placeholder="Mergers and Acquisitions" />
+					</div>
+					<div id="card-center">
+						<input id="name" type="text" class="center-align bold" placeholder="Paul ALLEN" />
+						<input id="role" type="text" class="center-align small bold" placeholder="Vice President" />
+					</div>
+					<div id="card-bottom">
+						<input id="address" type="text" class="center-align small" placeholder="358 Exchange Place New York, N.Y. 10099" />
+					</div>
+				</div>
+			</div>
+		</form>
+		<div id="footer">
+			<ul id="buttons">
+				<li class="orange-background"><a id="buy" href="#"><img src="assets/buy.svg" /></a></li>
+				<li class="grey-background"><a id="print" href="#"><img src="assets/print.svg" /></a></li>
+			</ul>
+		</div>
+	</body>
+</html>
