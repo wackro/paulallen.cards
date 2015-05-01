@@ -20,8 +20,8 @@ div#container {
 }
 div#card {
 	border: 1px solid #ddd;
-	width: 85mm;
-	height: 55mm;
+	width: 89mm;
+	height: 51mm;
 	position: relative;
 	display: flex;
 	justify-content: center;
@@ -76,7 +76,7 @@ div#footer {
 #card-top-left, #card-top-right {
 	position: absolute;
 	top: 5mm;
-	width: 37mm;
+	width: 39mm;
 }
 #card-top-left {
 	left: 5mm;
@@ -96,14 +96,14 @@ div#footer {
 	left: 5mm;
 }
 #card-center input {
-	width: 75mm;
+	width: 79mm;
 	right: 5mm;
 	left: 5mm;
 	margin: 1px 0;
 }
 #card-bottom {
 	position: absolute;
-	width: 75mm;
+	width: 79mm;
 	bottom: 5mm;
 	left: 5mm;
 }
