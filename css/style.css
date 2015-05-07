@@ -42,12 +42,13 @@ ul#buttons li {
 	border-radius: 30px;
 	position: relative;
 }
-ul#buttons img {
+ul#buttons img, ul#buttons input#buy {
 	position: absolute;
 	top: 8px;
 	left: 8px;
 	width: 30px;
 	height: 30px;
+	outline: none;
 }
 .orange-background {
 	background: #fc8;
