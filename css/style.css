@@ -128,12 +128,18 @@ div#footer {
 .left {
 	float: left
 }
-
+input:-webkit-autofill {
+	background-color: #fffff4 !important;
+	background-image: none !important;
+	color: #333 !important;
+}
+/* Print */
 @media print {
 	* {
 		visibility: hidden;
 	}
 	#card, #card * {
 		visibility: visible;
+		box-shadow: none;
 	}
 }

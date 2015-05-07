@@ -13,31 +13,33 @@
 		</script>
 	</head>
 	<body>
-		<form method="GET" action="">
+		<form method="GET" action="http://www.zazzle.co.uk/paul_allens_card-240869161152174909">
 			<div id="container">
 				<div id="card">
 					<div id="card-top-left">
-						<input id="phone" type="text"" placeholder="212.555.6342" />
+						<input name="phone" type="text" placeholder="212.555.6342" />
 					</div>
 					<div id="card-top-right">
-						<input id="company" type="text" class="right-align" placeholder="PIERCE & PIERCE" />
-						<input id="company-sub" type="text" class="right-align small right" placeholder="Mergers and Acquisitions" />
+						<input name="company" type="text" class="right-align" placeholder="PIERCE & PIERCE" />
+						<input name="companysub" type="text" class="right-align small right" placeholder="Mergers and Acquisitions" />
 					</div>
 					<div id="card-center">
-						<input id="name" type="text" class="center-align bold" placeholder="Paul ALLEN" />
-						<input id="role" type="text" class="center-align small bold" placeholder="Vice President" />
+						<input id="name" name="name" type="text" class="center-align bold" placeholder="Paul ALLEN" />
+						<input name="role" type="text" class="center-align small bold" placeholder="Vice President" />
 					</div>
 					<div id="card-bottom">
-						<input id="address" type="text" class="center-align small" placeholder="358 Exchange Place New York, N.Y. 10099" />
+						<input name="address1" type="text" class="center-align small" placeholder="358 EXCHANGE PLACE NEW YORK, N.Y. 10099" />
+						<input name="address2" type="text" class="center-align small" placeholder="FAX 212 555 6390 TELEX 10 5434" />
 					</div>
 				</div>
 			</div>
+			<div id="footer">
+				<ul id="buttons">
+					<li class="orange-background"><a id="buy" href="#"><img src="assets/buy.svg" /></a></li>
+					<li class="grey-background"><a id="print" href="#"><img src="assets/print.svg" /></a></li>
+				</ul>
+			</div>
+			<input type="submit" />
 		</form>
-		<div id="footer">
-			<ul id="buttons">
-				<li class="orange-background"><a id="buy" href="#"><img src="assets/buy.svg" /></a></li>
-				<li class="grey-background"><a id="print" href="#"><img src="assets/print.svg" /></a></li>
-			</ul>
-		</div>
 	</body>
 </html>

@@ -1,2 +1,2 @@
 # paulallen.cards
-zazzle business card generator
+the zazzle business card generator that sits on http://paulallen.cards
