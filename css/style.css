@@ -88,7 +88,7 @@ ul#buttons {
 	height: 30px;
 	outline: none;
 }
-#cycle-icon:hover * {
+#cycle-icon-container:hover * {
 	fill: #aaa;
 }
 .orange-background {
