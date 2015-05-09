@@ -18,37 +18,78 @@ div#container {
 	align-items: center;
 	height: 100%;
 }
-div#card {
-	border: 1px solid #ddd;
+div#card-holder {
 	width: 89mm;
 	height: 51mm;
 	position: relative;
+}
+div.card {
+	border: 1px solid #ddd;
+	width: 89mm;
+	height: 51mm;
+	position: absolute;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	font-family: Georgia, serif;
 	background: #fefef8;
 	font-variant: small-caps;
-	box-shadow: 0px 1px 1px #ddd;
+	box-shadow: 0px 1px 1px #eee;
+}
+#allen {
+	top: 0px;
+	left: 0px;
+	z-index: 4;
+}
+#bateman {
+	top: 5px;
+	left: 5px;
+	z-index: 3;
+}
+#vanpatten {
+	top: 10px;
+	left: 10px;
+	z-index: 2;
+}
+#bryce {
+	top: 15px;
+	left: 15px;
+	z-index: 1;
 }
 ul#buttons {
 	float: right;
 	list-style-type: none;
 }
-ul#buttons li {
+.icon-container {
 	width: 45px;
 	height: 45px;
 	margin-bottom: 1em;
 	border-radius: 30px;
 	position: relative;
 }
-ul#buttons img, ul#buttons input#buy {
+.icon-container img, .icon-container input {
 	position: absolute;
 	top: 8px;
 	left: 8px;
 	width: 30px;
 	height: 30px;
 	outline: none;
+}
+#cycle-icon-container {
+	position: relative;
+	left: -23px;
+	top: -66px;
+}
+#cycle-icon {
+	position: absolute;
+	top: 5px;
+	left: 8px;
+	width: 30px;
+	height: 30px;
+	outline: none;
+}
+#cycle-icon:hover * {
+	fill: #aaa;
 }
 .orange-background {
 	background: #fc8;
@@ -74,41 +115,41 @@ div#footer {
 	right: 0;
 	padding: 1em;
 }
-#card-top-left, #card-top-right {
+.card-top-left, .card-top-right {
 	position: absolute;
 	top: 4mm;
 	width: 39mm;
 }
-#card-top-left {
+.card-top-left {
 	left: 5mm;
 }
-#card-top-right {
+.card-top-right {
 	right: 5mm;
 }
-#card-top-right input, #card-top-left input {
+.card-top-right input, .card-top-left input {
 	display: block;
 	width: 100%;
 }
-#card-center {
+.card-center {
 	width: 100%;
 	top: 22.5mm;
 	display: table-cell;
 	position: absolute;
 	left: 5mm;
 }
-#card-center input {
+.card-center input {
 	width: 79mm;
 	right: 5mm;
 	left: 5mm;
 	margin: 1px 0;
 }
-#card-bottom {
+.card-bottom {
 	position: absolute;
 	width: 79mm;
 	bottom: 3mm;
 	left: 5mm;
 }
-#card-bottom input {
+.card-bottom input {
 	width: 100%;
 }
 .row {
@@ -139,10 +180,10 @@ input:-webkit-autofill {
 	* {
 		display: hidden;
 	}
-	#card {
+	.card {
 		box-shadow: none;
 	}
-	#card, #card * {
+	.card, .card * {
 		visibility: visible;
 	}
 }
