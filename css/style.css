@@ -88,6 +88,22 @@ ul#buttons {
 	height: 30px;
 	outline: none;
 }
+#cycle-icon-container {
+	-webkit-transition-duration: 0.05s;
+	-moz-transition-duration: 0.05s;
+	-o-transition-duration: 0.05s;
+	transition-duration: 0.05s;
+	-webkit-transition-property: -webkit-transform;
+	-moz-transition-property: -moz-transform;
+	-o-transition-property: -o-transform;
+	transition-property: transform;
+}
+#cycle-icon-container:hover {
+	-webkit-transform:rotate(-45deg);
+	-moz-transform:rotate(-45deg);
+	-o-transform:rotate(-45deg);
+}
+
 #cycle-icon-container:hover * {
 	fill: #aaa;
 }
