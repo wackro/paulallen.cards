@@ -17,6 +17,7 @@ div#container {
 	justify-content: center;
 	align-items: center;
 	height: 100%;
+	flex-direction: column;
 }
 div#card-holder {
 	width: 89mm;
@@ -31,30 +32,38 @@ div.card {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	font-family: Georgia, serif;
 	background: #fefef8;
-	font-variant: small-caps;
 	box-shadow: 0px 1px 1px #eee;
 }
 #allen {
 	top: 0px;
 	left: 0px;
 	z-index: 4;
+	color: #f88;
+	font-family: Georgia, serif;
+	font-variant: small-caps;
 }
 #bateman {
 	top: 5px;
 	left: 5px;
 	z-index: 3;
+	font-family: Garamond, serif;
+	font-variant: small-caps;
 }
 #vanpatten {
 	top: 10px;
 	left: 10px;
 	z-index: 2;
+	color: #88f;
+}
+#vanpatten .name {
+	font-weight: bold;
 }
 #bryce {
 	top: 15px;
 	left: 15px;
 	z-index: 1;
+	color: #4fc;
 }
 ul#buttons {
 	float: right;
@@ -76,9 +85,7 @@ ul#buttons {
 	outline: none;
 }
 #cycle-icon-container {
-	position: relative;
-	left: -23px;
-	top: -66px;
+	margin: 2em 0 0 0;
 }
 #cycle-icon {
 	position: absolute;

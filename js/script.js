@@ -29,6 +29,10 @@ $(document).ready(function() {
 	
 	// register listeners
 	$(document).ready(function() {
+		$(".card").each(function(i, element){
+			var rand = Math.floor(Math.random() * 7) - 3;
+			$(element).css("-webkit-transform", "rotate(" + rand + "deg)")
+		})
 		$("#print").click(function() {
 			window.print();
 		})
