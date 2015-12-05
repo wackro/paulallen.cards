@@ -22,28 +22,28 @@ var cards = [
 ]
 
 var activeCard = 0
-var activeCardZIndex = 4
+var activeCardZIndex = cards.length;
 
 $(document).ready(function() {
 	// focus on active card's name field
 	
 	// register listeners
 	$(document).ready(function() {
-		$(".card").each(function(i, element){
+		$(".card").each(function(i, element) {
 			var rand = Math.floor(Math.random() * 7) - 3;
 			$(element).css("-webkit-transform", "rotate(" + rand + "deg)")
 		})
 		$("#print").click(function() {
-			window.print();
+			window.print()
 		})
 		$("#cycle-icon-container").click(function() {
-			cycle();
+			cycle()
 		})
 	})
 })
 
 function cycle() {
-	if(activeCard++ >= 3)
+	if(activeCard++ == (cards.length -1))
 		activeCard = 0
 	$("form#purchase").attr("action", cards[activeCard].link)
 	var c = $("div#" + cards[activeCard].name)

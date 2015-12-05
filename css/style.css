@@ -40,21 +40,22 @@ div.card {
 	left: 0px;
 	z-index: 4;
 	color: #f88;
-	font-family: Georgia, serif;
+	font-family: 'Copperplate Gothic', 'Della Respira', serif;
 	font-variant: small-caps;
+    font-size: 13pt;
 }
 #bateman {
 	top: 5px;
 	left: 5px;
 	z-index: 3;
-	font-family: Garamond, serif;
+	font-family: 'EB Garamond', serif;
 	font-variant: small-caps;
 }
 #vanpatten {
 	top: 10px;
 	left: 10px;
 	z-index: 2;
-	color: #88f;
+    font-family: 'Old Standard TT', serif;
 }
 #vanpatten .name {
 	font-weight: bold;
@@ -62,8 +63,8 @@ div.card {
 #bryce {
 	top: 15px;
 	left: 15px;
+    font-family: 'Roboto', sans-serif;
 	z-index: 1;
-	color: #4fc;
 }
 ul#buttons {
 	float: right;
@@ -171,9 +172,11 @@ div#footer {
 	width: 79mm;
 	bottom: 3mm;
 	left: 5mm;
+    font-size: smaller;
 }
 .card-bottom input {
 	width: 100%;
+    font-size: 8.5px;
 }
 .row {
 	display: table-row;
