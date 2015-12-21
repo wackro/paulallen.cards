@@ -29,23 +29,24 @@ var activeCard = 0
 
 // register listeners
 $(document).ready(function() {
-    updateNav()
     for(var i=1; i<cards.length; i++)
         $("#" + cards[i].id).hide()
 	$("#print").click(function() {
 		window.print()
 	})
-	$("#cycle-icon-container").click(function() {
-		cycle()
+    $("#nav-back").click(function() {
+		back()
+	})
+    $("#nav-forward").click(function() {
+		forward()
 	})
 })
 
-function cycle() {
+function back() {
     $("#" + cards[activeCard].id).fadeOut()
-	if(activeCard++ == (cards.length -1))
-		activeCard = 0
+	if(activeCard-- <= 0)
+		activeCard = (cards.length -1)
     $("#" + cards[activeCard].id).fadeIn()
-    updateNav()
     updateFormUrl()
 
     function updateFormUrl(url) {
@@ -53,6 +54,14 @@ function cycle() {
     }
 }
 
-function updateNav() {
-    $("#nav-title").text(cards[activeCard].fullName)
+function forward() {
+    $("#" + cards[activeCard].id).fadeOut()
+	if(activeCard++ >= (cards.length -1))
+		activeCard = 0
+    $("#" + cards[activeCard].id).fadeIn()
+    updateFormUrl()
+
+    function updateFormUrl(url) {
+        $("form#purchase").attr("action", cards[activeCard].link)
+    }
 }
