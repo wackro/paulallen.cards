@@ -12,7 +12,7 @@ input {
 	font-variant: inherit;
 	border: none;
 }
-div#container {
+div#flex {
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -36,44 +36,34 @@ div.card {
 	box-shadow: 0px 1px 1px #eee;
 }
 #allen {
-	top: 0px;
-	left: 0px;
-	z-index: 4;
-	color: #f88;
 	font-family: 'Copperplate Gothic', 'Della Respira', serif;
 	font-variant: small-caps;
     font-size: 13pt;
 }
 #bateman {
-	top: 5px;
-	left: 5px;
-	z-index: 3;
 	font-family: 'EB Garamond', serif;
 	font-variant: small-caps;
 }
 #vanpatten {
-	top: 10px;
-	left: 10px;
-	z-index: 2;
     font-family: 'Old Standard TT', serif;
 }
 #vanpatten .name {
 	font-weight: bold;
 }
 #bryce {
-	top: 15px;
-	left: 15px;
     font-family: 'Roboto', sans-serif;
-	z-index: 1;
 }
 ul#buttons {
-	float: right;
 	list-style-type: none;
+    margin: 0 auto;
+}
+ul#buttons li {
+    display: inline-block;
+    margin: 0 0.4em;
 }
 .icon-container {
 	width: 45px;
 	height: 45px;
-	margin-bottom: 1em;
 	border-radius: 30px;
 	position: relative;
 }
@@ -86,10 +76,9 @@ ul#buttons {
 	outline: none;
 }
 #cycle-icon-container {
-	margin: 2em 0 0 0;
+	
 }
 #cycle-icon {
-	position: absolute;
 	top: 5px;
 	left: 8px;
 	width: 30px;
@@ -132,12 +121,6 @@ ul#buttons {
 }
 .bold {
 	font-weight: bold;
-}
-div#footer {
-	position: absolute;
-	bottom: 0;
-	right: 0;
-	padding: 1em;
 }
 .card-top-left, .card-top-right {
 	position: absolute;
@@ -195,6 +178,9 @@ div#footer {
 }
 .left {
 	float: left
+}
+div#footer {
+    margin-top: 2em;
 }
 input:-webkit-autofill {
 	background-color: #fefef8 !important;

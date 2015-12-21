@@ -4,48 +4,55 @@
 
 var cards = [
 	{
-		name: "allen",
+		id: "allen",
+        fullName : "Paul Allen's card",
 		link: "http://www.zazzle.co.uk/paul_allens_card-240869161152174909"
 	},
 	{
-		name: "bateman",
-		link: "bbb"
+		id: "bateman",
+        fullName : "Patrick Bateman's card",
+		link: "http://zazzle.com/patrick_batemans_card_xxxxxxxxxxx"
 	},
 	{
-		name: "vanpatten",
-		link: "ccc"
+		id: "vanpatten",
+        fullName : "David Van Patten's card",
+		link: "http://zazzle.com/david_vanpattens_card_xxxxxxxxxxx"
 	},
 	{
-		name: "bryce",
-		link: "ddd"
+		id: "bryce",
+        fullName : "Timothy Bryce's card",
+		link: "http://zazzle.com/timothy_bryces_card_xxxxxxxxxxx"
 	}
 ]
 
 var activeCard = 0
-var activeCardZIndex = cards.length;
 
+// register listeners
 $(document).ready(function() {
-	// focus on active card's name field
-	
-	// register listeners
-	$(document).ready(function() {
-		$(".card").each(function(i, element) {
-			var rand = Math.floor(Math.random() * 7) - 3;
-			$(element).css("-webkit-transform", "rotate(" + rand + "deg)")
-		})
-		$("#print").click(function() {
-			window.print()
-		})
-		$("#cycle-icon-container").click(function() {
-			cycle()
-		})
+    updateNav()
+    for(var i=1; i<cards.length; i++)
+        $("#" + cards[i].id).hide()
+	$("#print").click(function() {
+		window.print()
+	})
+	$("#cycle-icon-container").click(function() {
+		cycle()
 	})
 })
 
 function cycle() {
+    $("#" + cards[activeCard].id).fadeOut()
 	if(activeCard++ == (cards.length -1))
 		activeCard = 0
-	$("form#purchase").attr("action", cards[activeCard].link)
-	var c = $("div#" + cards[activeCard].name)
-	c.css("z-index", activeCardZIndex++)
+    $("#" + cards[activeCard].id).fadeIn()
+    updateNav()
+    updateFormUrl()
+
+    function updateFormUrl(url) {
+        $("form#purchase").attr("action", cards[activeCard].link)
+    }
+}
+
+function updateNav() {
+    $("#nav-title").text(cards[activeCard].fullName)
 }
