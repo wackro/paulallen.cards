@@ -25,10 +25,21 @@ var cards = [
 	}
 ]
 
+var details = {
+    phone: "",
+    company: "",
+    companysub: "",
+    name: "",
+    role: "",
+    address1: "",
+    address2: ""
+}
+
 var activeCard = 0
 
 // register listeners
 $(document).ready(function() {
+    setInputValuesAccordingToCookies()
     for(var i=1; i<cards.length; i++)
         $("#" + cards[i].id).hide()
 	$("#print").click(function() {
@@ -40,7 +51,28 @@ $(document).ready(function() {
     $("#nav-forward").click(function() {
 		navigate("forward")
 	})
+    $(".card input").change(function(event) {
+        if(details[event.target.name] != undefined) {
+            $(".card input[name=" + event.target.name + "]").val(event.target.value)
+            document.cookie = event.target.name + "=" + event.target.value
+            return
+        }
+    })
 })
+
+function setInputValuesAccordingToCookies() {
+    $(".card input").each(function(index, element) {
+        var cookie = getCookie(element.name)
+        if(cookie != undefined)
+            element.value = cookie
+    })
+
+    function getCookie(name) {
+        var value = "; " + document.cookie;
+        var parts = value.split("; " + name + "=");
+        if (parts.length == 2) return parts.pop().split(";").shift();
+    }
+}
 
 function navigate(direction) {
     if(direction != "forward" && direction != "back")
@@ -62,4 +94,9 @@ function navigate(direction) {
 
 function updateFormUrl(url) {
     $("form#purchase").attr("action", cards[activeCard].link)
+}
+function getCookie(name) {
+    var value = "; " + document.cookie;
+    var parts = value.split("; " + name + "=");
+    if (parts.length == 2) return parts.pop().split(";").shift();
 }
