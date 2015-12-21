@@ -35,33 +35,31 @@ $(document).ready(function() {
 		window.print()
 	})
     $("#nav-back").click(function() {
-		back()
+		navigate("back")
 	})
     $("#nav-forward").click(function() {
-		forward()
+		navigate("forward")
 	})
 })
 
-function back() {
+function navigate(direction) {
+    if(direction != "forward" && direction != "back")
+        return
     $("#" + cards[activeCard].id).fadeOut()
-	if(activeCard-- <= 0)
-		activeCard = (cards.length -1)
-    $("#" + cards[activeCard].id).fadeIn()
-    updateFormUrl()
-
-    function updateFormUrl(url) {
-        $("form#purchase").attr("action", cards[activeCard].link)
+    switch(direction) {
+        case "forward":
+            if(activeCard++ >= (cards.length -1))
+		        activeCard = 0
+            break
+        case "back":
+            if(activeCard-- <= 0)
+		        activeCard = (cards.length -1)
+            break
     }
+    $("#" + cards[activeCard].id).fadeIn()
+    updateFormUrl(cards[activeCard].link)
 }
 
-function forward() {
-    $("#" + cards[activeCard].id).fadeOut()
-	if(activeCard++ >= (cards.length -1))
-		activeCard = 0
-    $("#" + cards[activeCard].id).fadeIn()
-    updateFormUrl()
-
-    function updateFormUrl(url) {
-        $("form#purchase").attr("action", cards[activeCard].link)
-    }
+function updateFormUrl(url) {
+    $("form#purchase").attr("action", cards[activeCard].link)
 }
